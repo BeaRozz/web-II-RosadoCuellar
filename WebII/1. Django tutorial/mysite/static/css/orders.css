@@ -1,0 +1,25 @@
+*{
+    background-color: hsl(180, 10%, 15%);
+}
+
+h1{
+    text-align: center;
+    color: chocolate;
+}
+
+p{
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container div{
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    border: 2px solid black;
+}
