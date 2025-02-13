@@ -14,7 +14,7 @@ para activar Django.
 <h2>Carpetas:</h2>
  <ul>
   <li><b>env:</b> Configuración del archivo env para Django</li> 
-  <li><b>1. Django tutorial:</b> Contiene el seguimeinto de los tutoriales de Django. Contiene las prácticas 1, 2 y 3 del Primer Parcial.</li>
+  <li><b>1. Django tutorial:</b> Contiene el seguimeinto de los tutoriales de Django. Contiene las prácticas 1, 2, 3 y 4 del Primer Parcial.</li>
  </ul>
 <br>
 ***
@@ -25,5 +25,6 @@ En qué carpeta encontrar cada práctica, tarea o examen
 <ul>
  <li><b>Práctica 1:</b> Seguimiento del primer tutorial de Django. Se puede encontrar en la carpeta 1. Django tutorial</li>
  <li><b>Práctica 2:</b> Seguimiento del segundo tutorial de Django. Se puede encontrar en la carpeta 1. Django tutorial</li>
- <li><b>Práctica 3:</b> Seguimiento del segundo tutorial de Django para el panel de administrador. Se puede encontrar en la carpeta 1. Django tutorial y se realizó en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.3_Practica3-U1">"1.3_Practica3-U1"</a></li>
+ <li><b>Práctica 3:</b> Seguimiento del segundo tutorial de Django para el panel de administrador. Se puede encontrar en la carpeta "1. Django tutorial" y se realizó en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.3_Practica3-U1">"1.3_Practica3-U1"</a></li>
+ <li><b>Práctica 4:</b> Creación de un módulo llamado Clients. Se puede encontrar en la carpeta "1. Django tutorial" y se realizó en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.4_Practica4-U1">"1.4_Practica4-U1"</a></li>
 </ul>
