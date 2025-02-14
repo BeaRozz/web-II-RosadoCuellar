@@ -7,7 +7,7 @@ class User(models.Model):
     age = models.IntegerField(default=18)
     rfc = models.CharField(max_length=200)
     photo = models.CharField(max_length=200)
-    created_date = models.DateTimeField("date published")
+    created_date = models.DateTimeField("date published") 
     updated_date = models.DateTimeField("date published")
 
 
