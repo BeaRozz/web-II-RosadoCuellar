@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base/base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreateUser</title>
-</head>
-
-<body>
-  
+{% block content %}
+          
     <h1>{{message}}</h1>
     <h3>{{status}}</h3>
     <h4>{{user.name}}</h4>
@@ -32,6 +25,5 @@
 
         <button type="submit">Create User</button>
     </form>
-</body>
 
-</html>
+{% endblock %}

@@ -1,35 +1,33 @@
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Users</title>
-            {% load static %}
-            <link rel="stylesheet" href="{% static 'css/clients.css' %}">
-        </head>
-        <body>
-            <div class="container-main">
+{% extends "base/base.html" %}
+{% load static %}
 
-                <h1>{{titulo}}</h1>
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/clients.css' %}">
+{% endblock %}
 
-                <div class="grid-container">
+{%block content %}
+<div class="container-main">
 
-                    {%for item in users %}
-                        <div class="block">
-                            <img src={{item.photo}} alt="Imagen del usuario">
-                            <div class="info-block">
-                                <h3>{{item.name}}</h3>
-                                <div class="micro-block">
-                                    <p><b>ID:</b> {{item.id}}</p>
-                                    <p><b>AGE:</b> {{item.age}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+    <h1>{{titulo}}</h1>
 
+    <div class="grid-container">
+
+        {%for item in users %}
+            {% include 'components/UserCard.html' with name=item.name email=item.email id=item.id %}
+            <!-- <div class="block">
+                <img src={{item.photo}} alt="Imagen del usuario">
+                <div class="info-block">
+                    <h3>{{item.name}}</h3>
+                    <div class="micro-block">
+                        <p><b>ID:</b> {{item.id}}</p>
+                        <p><b>AGE:</b> {{item.age}}</p>
+                    </div>
                 </div>
+            </div> -->
+        {% endfor %}
+
+    </div>
 
 
-            </div>
-        </body>
-    </html>
+</div>
+{%endblock%}
