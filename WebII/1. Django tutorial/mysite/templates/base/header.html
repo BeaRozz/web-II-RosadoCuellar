@@ -1,12 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main/header.css' %}">
+<header>
 <nav>
-    <div class="menu">
-        <div class="menu_logo">
-            <a href="">Logo</a>
-        </div>
-        <div class="menu-options">
-            <div>
-                <a href="">Home</a>
-            </div>
-        </div>
+    <div class="logo">
+        <img src="https://th.bing.com/th/id/OIP._HsDTGfQyzEtnFRntcJH_wHaFi?rs=1&pid=ImgDetMain" alt="Logo" class="logo-img">
     </div>
+    <ul class="nav-list">
+        <li><a href="{% url 'index' %}" class="nav-item">Inicio</a></li>
+        <li><a href="{% url 'indexOrders' %}" class="nav-item">Ordenes</a></li>
+        <li><a href="{% url 'userIndex' %}" class="nav-item">Clientes</a></li>
+    </ul>
 </nav>
+</header>
