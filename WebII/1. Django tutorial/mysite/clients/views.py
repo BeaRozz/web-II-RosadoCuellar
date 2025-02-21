@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import User
 from django.utils import timezone
+from django.http import JsonResponse
+import json
 
 
 def userIndex(request):
@@ -37,6 +39,13 @@ def createUser(request):
         data["status"] = "error"
     
     return render(request, "clients/create.html", data)
+
+def createUserByFetch(request):
+    body_unicode = request.body.decode('utf-8')
+    body = json.loads(body_unicode)
+    return JsonResponse({
+        "NOMBRE_RECIBIDO": body.get("name")
+    })
 
 def userDetail(request, id):
     user = get_object_or_404(User, id=id)
