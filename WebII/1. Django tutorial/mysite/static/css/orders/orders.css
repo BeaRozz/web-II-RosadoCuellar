@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo global de la página */
+body {
+    background-color: #333;  /* Fondo oscuro para toda la página */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;  /* Color de texto general */
+    line-height: 1.6;
+}
+
+/* Estilo para el título principal */
+h1 {
+    text-align: center;
+    color: #D2691E; /* Color chocolate */
+    margin-top: 20px;
+}
+
+/* Estilo para los párrafos */
+p {
+    text-align: center;
+    color: #6495ED; /* Color cornflowerblue */
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Diseño responsivo */
+    gap: 1rem;
+    padding: 20px;
+}
+
+/* Estilo de los elementos dentro del contenedor */
+.container div {
+    text-align: center;
+    color: #008000;  /* Color verde */
+    font-size: 1.2rem;
+    border: 2px solid #000;  /* Borde oscuro */
+    padding: 20px;
+    background-color: #fff;  /* Fondo blanco para los bloques */
+    border-radius: 8px;  /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Transición para efectos */
+}
+
+/* Efecto al pasar el mouse sobre los bloques */
+.container div:hover {
+    transform: translateY(-5px);  /* Desplazamiento al pasar el mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Sombra al pasar el mouse */
+}
