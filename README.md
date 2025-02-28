@@ -28,4 +28,5 @@ En qué carpeta encontrar cada práctica, tarea o examen
  <li><b>Práctica 3:</b> Seguimiento del segundo tutorial de Django para el panel de administrador. Se puede encontrar en la carpeta "1. Django tutorial" y se realizó en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.3_Practica3-U1">"1.3_Practica3-U1"</a></li>
  <li><b>Práctica 4:</b> Creación de un módulo llamado Clients. Se puede encontrar en la carpeta "1. Django tutorial" y se realizó en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.4_Practica4-U1">"1.4_Practica4-U1"</a></li>
  <li><b>Práctica 5:</b> Adiciones a la página con opción de modificar los datos del usuario <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.5_Practica5-U1">"1.5_Practica5-U1"</a></li>
+ <li><b>Examen Parte 1:</b> Cambio de las carpetas y archivos para el examen Parcial 1 <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/1.5_Practica5-U1">"Examen 1"</a></li>
 </ul>
