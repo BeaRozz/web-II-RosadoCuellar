@@ -1,0 +1,20 @@
+nav {
+    margin: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+    font-size: 1.2em;
+}
