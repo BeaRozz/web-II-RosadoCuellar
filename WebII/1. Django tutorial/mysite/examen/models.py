@@ -10,6 +10,7 @@ class Producto(models.Model):
     name = models.CharField(max_length=200, default='Nutella, mi perro')
     precio = models.FloatField(default=0.0)
     localidad_id = models.ForeignKey(Localidad, on_delete=models.CASCADE, default=1)
+    create_at = models.DateTimeField(default=timezone.now)
 
 
 class Evento(models.Model):
