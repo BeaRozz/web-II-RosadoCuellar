@@ -90,8 +90,11 @@ button.addEventListener("click", function(event){
 function checkPrecio(precio_text){
     const precio = parseFloat(precio_text);
 
-    if(precio >= 0) return true;
+    if(precio <= 0){
+        alert("Agregue un valor válido")
+        return false;    
+    }
 
-    alert("Agregue un valor válido")
-    return false;
+    return true;
+    
 }
