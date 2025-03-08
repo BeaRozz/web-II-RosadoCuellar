@@ -10,6 +10,7 @@
         <!-- Agregar el script de Babel -->
         <script src="https://unpkg.com/@babel/standalone"></script>
         <script type="text/babel" src="components/MyButton.js"></script>
+        <script type="text/babel" src="components/Alumno.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -38,9 +39,15 @@
             const [texto, setTexto] = useState('Hola Mundo');
             const [alumno, setAlumnos] = useState([
                 {nombre: 'Juan', calificacion: 10, materia: "español"},
-                {nombre: 'Pedro', calificacion: 9, materia: "matematicas"},
+                {nombre: 'Pedro', calificacion: 9, materia: "matemáticas"},
                 {nombre: 'Maria', calificacion: 8, materia: "historia"},
-                {nombre: 'Jose', calificacion: 7, materia: "geografia"},
+                {nombre: 'Jose', calificacion: 7, materia: "geografáa"},
+                {nombre: 'Ana', calificacion: 6, materia: "ciencias"},
+                {nombre: 'Luis', calificacion: 5, materia: "educacion física"},
+                {nombre: 'Carlos', calificacion: 4, materia: "artes"},
+                {nombre: 'Sofia', calificacion: 3, materia: "tecnología"},
+                {nombre: 'Fernando', calificacion: 2, materia: "ética"},
+                {nombre: 'Luisa', calificacion: 1, materia: "informática"}
             ]);
             const [alu, setAlu] = useState(["Juan", "Pedro", "Maria", "Jose"]);
 
@@ -62,12 +69,8 @@
 
                     <div className="container">
                         
-                        {alumno.filter(alumno => alumno.calificacion >= 8).map((alumno, index) => (
-                            <div style={{display: visible? 'block': 'none'}}>
-                                <p>Este es el alumno {alumno.nombre}</p>
-                                <p>Calificacion: {alumno.calificacion}</p>
-                                <p>Materia: {alumno.materia}</p>
-                            </div>
+                        {alumno.map((alumno, index) => (
+                            <Alumno alumno={alumno} />
                         ))}
                         
                     </div>
