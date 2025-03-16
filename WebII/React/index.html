@@ -1,86 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone"></script>
+    <script type="text/babel" src="context/count-context.js"></script>
+</head>
+<body>
+    <div id="root">
 
-        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-        <!-- Agregar el script de Babel -->
-        <script src="https://unpkg.com/@babel/standalone"></script>
-        <script type="text/babel" src="components/MyButton.js"></script>
-        <script type="text/babel" src="components/Alumno.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+    </div>
+</body>
 
-        <div id="root">
+<script type="text/babel">
 
-        </div>
-    
-    </body>
+    const {createContext, useState} = React;
+    //const CountContext = createContext(null);
+    const {CountContext, CountContextProvider} = window
+    const UserContext = createContext(null);
 
-    <script type="text/babel">
+    function App(){
+        const [count, setCount] = useState(0);
+        const [countRestar, setCountRestar] = useState(0);
+        const [user, setUser] = useState({
+            name: "Ceviche",
+            age: 2,
+            email: "ceviche@elcamaron"
+        })
+        return(
+            <div>
+                <CountContextProvider value={{count, setCount, countRestar, setCountRestar}}>
+                    <Component1 />
+                    <Component2 />
+                </CountContextProvider>
 
-        function saludar(params){
-            alert('Hola Mundo');
-        }
+                <UserContext.Provider value={{user, setUser}}>
+                    <ProfileUser />
+                    <SearchUser />
+                </UserContext.Provider>
 
-        function despedir(params){
-            alert('Adios Mundo');
-        }
+            </div>
+        );
+    }
 
-        function App(){
-            const {useState} = React;
-            const [contador, setContador] = useState(0);
-            const [contador2, setContador2] = useState(0);
-            const [visible, setVisible] = useState(true);
-            const [texto, setTexto] = useState('Hola Mundo');
-            const [alumno, setAlumnos] = useState([
-                {nombre: 'Juan', calificacion: 10, materia: "español"},
-                {nombre: 'Pedro', calificacion: 9, materia: "matemáticas"},
-                {nombre: 'Maria', calificacion: 8, materia: "historia"},
-                {nombre: 'Jose', calificacion: 7, materia: "geografáa"},
-                {nombre: 'Ana', calificacion: 6, materia: "ciencias"},
-                {nombre: 'Luis', calificacion: 5, materia: "educacion física"},
-                {nombre: 'Carlos', calificacion: 4, materia: "artes"},
-                {nombre: 'Sofia', calificacion: 3, materia: "tecnología"},
-                {nombre: 'Fernando', calificacion: 2, materia: "ética"},
-                {nombre: 'Luisa', calificacion: 1, materia: "informática"}
-            ]);
-            const [alu, setAlu] = useState(["Juan", "Pedro", "Maria", "Jose"]);
-
-            function verParrafo(){
-                setVisible(!visible);
-            }
-
-            return(
+    function ProfileUser(){
+        const {user, setUser} = React.useContext(UserContext);
+        return(
+            <div>
                 <div>
-                    <h1>Hola Mundo</h1>
-                    <p>Esto es react</p>
-                    <button onClick={saludar}>Click</button>
-                    <MyButton titulo="Saludar" contador={contador} setContador={setContador} />
-                    <h2>Contador: {contador}</h2>
-                    <MyButton titulo="Despedir" contador={contador2} setContador={setContador2} />
-                    <h2>Contador2: {contador2}</h2>
-
-                    <button onClick={verParrafo}>Ver Parrafo</button>
-
-                    <div className="container">
-                        
-                        {alumno.map((alumno, index) => (
-                            <Alumno alumno={alumno} />
-                        ))}
-                        
-                    </div>
-
+                    <h2>Perfil de Usuario</h2>
+                    <p>Nombre: {user.name}</p>
+                    <p>Edad: {user.age}</p>
+                    <p>Email: {user.email}</p>
                 </div>
-            )
-        }
+            </div>
+        )
+    }
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    function SearchUser(){
+        const {user, setUser} = React.useContext(UserContext);
+        return(
+            <div>
+                <label>Nombre a buscar</label>
+                <input value={user.name} onChange={buscarUsuario} />
+
+                <label>Edad a buscar</label>
+                <input value={user.age} />
+
+                <label>Email a buscar</label>
+                <input value={user.email} />
+            </div>
+        )
+    }
+
+    function buscarUsuario(event){
+        const {user, setUser} = React.useContext(UserContext);
+        console.log(event.target.value);
+        setUser({
+            name: event.target.value,
+            age: user.age,
+            email: user.email
+        })
+    }
+
+    function Component1(){
+        const {count, setCount} = React.useContext(CountContext);
+        console.log("Render de componenete 1")
+        return(
+            <div>
+                <h2>Componente 1</h2>
+                <button onClick={() => setCount(count + 1)}>Incrementar</button>
+                <p>Contador: {count}</p>
+            </div>
+        );
+    }
+
+    function Component2(){
+        const {countRestar, setCountRestar} = React.useContext(CountContext);
+        console.log("Render de componenete 2")
+        return(
+            <div>
+                <h2>Componente 2</h2>
+                <button onClick={() => setCountRestar(countRestar - 1)}>Restar</button>
+                <p>Contador: {countRestar}</p>
+            </div>
+        );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+</script>
 
 </html>

@@ -33,8 +33,8 @@ En qué carpeta encontrar cada práctica, tarea o examen
 <h2>Parcial 2 React</h2>
 <h3>Carpetas:</h3>
  <ul>
-  <li><b>components:</b> Componentes en js</li> 
-  <li><b>css:</b> Estilos en css</li>
+  <li><b>React:</b> Proyecto con react importado</li> 
+  <li><b>React_nat:</b> Proyecto con react nativo usando node.js</li>
  </ul>
 <h3>Prácticas, Tareas y Exámenes del Parcial 2:</h3>
 En qué carpeta encontrar cada práctica, tarea o examen
