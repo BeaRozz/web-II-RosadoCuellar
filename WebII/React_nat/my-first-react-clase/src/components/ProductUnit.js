@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 export default function ProductUnit({product}){
 
-    const {title, category, price, images, tags, stock, brand, dimensions} = product;
+    const {title, category, price, images, tags, stock, brand, dimensions, id} = product;
     const {height, width, depth} = dimensions ?? ""
     const image = images?.[0] ?? ""
     const [add, setAdd] = useState(1)
@@ -15,9 +15,19 @@ export default function ProductUnit({product}){
     }, [add])
 
     useEffect(() => {
-        if (clicked) {
-          alert('Button clicked!');
-          setClicked(false);
+        if (clicked) {     
+            const dataProduct = {
+                id: id,
+                image: image,
+                title: title,
+                category: category,
+                cant: add,
+                unitPrice: price,
+                stock: stock,
+                finalPrice:add*price
+            }
+            AddToShoppingCart(dataProduct)
+            setClicked(false);
         }
       }, [clicked]);
 
@@ -25,20 +35,20 @@ export default function ProductUnit({product}){
         <div className="product-det">
             {title ? (
                 <div className="product-container-det">
-                    <div class="product-image-det">
+                    <div className="product-image-det">
                         <img src={image} alt="Producto" />
                     </div>
 
-                    <div class="product-details-det">
+                    <div className="product-details-det">
                         <h1>{title}</h1>
 
-                        <div class="tags">
+                        <div className="tags">
                             {tags.map((tag) => (
                                 <span>{tag}</span>
                             ))}
                         </div>
 
-                        <div class="product-price-det">
+                        <div className="product-price-det">
                             ${price}
                         </div>
 
@@ -48,7 +58,7 @@ export default function ProductUnit({product}){
 
                         <p><strong>Marca:</strong> {brand}</p>
 
-                        <div class="product-info-det">
+                        <div className="product-info-det">
                             <div><strong>Dimensiones:</strong></div>
                             <div><strong>Alto:</strong> {height} cm</div>
                             <div><strong>Ancho:</strong> {width} cm</div>
@@ -78,4 +88,55 @@ export default function ProductUnit({product}){
             )}
         </div>
     )
+}
+
+function AddToShoppingCart(product){
+    const {cant, stock, id, finalPrice} = product
+
+    //primero validamos que la cantidad a comprar es válida
+    if(cant <= 0 || cant > stock)
+    {
+        alert("La cantidad solicitada no es válida")
+        return
+    }
+
+    //obtenemos el carrito de compras, sino hay es un arreglo vacío y tmb el total de productos
+    const allShoppingProducts = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    const totalShoppingCart = parseFloat(localStorage.getItem('total')) || 0;
+
+    //calculamos el nuevo total
+    const newTotal = parseFloat(totalShoppingCart + finalPrice).toFixed(2)
+
+    //verificamos que el carrito no supere los 10,000
+    if(newTotal > 10000){
+        alert("El carrito supera los $10,000")
+        return
+    }
+
+    //verificamos que no sea un producto repetido, en caso que sí, lo agregamos
+    const indexRepited = allShoppingProducts.findIndex((item) => item.id === id);
+    const repited = indexRepited !== -1
+    if(repited){
+        allShoppingProducts[indexRepited].finalPrice += finalPrice
+        allShoppingProducts[indexRepited].cant += cant
+    }
+
+    //si el producto no está repedido lo agregamos al arrglo
+    if(!repited) allShoppingProducts.push(product)
+
+    //si tenemos más de 5 elementos en el arreglo retornamos
+    if(allShoppingProducts.length > 5){
+        alert("El máximo de productos diferentes es 5")
+        return
+    }
+
+    //Guardamos en el local storage
+    localStorage.setItem('shoppingCart', JSON.stringify(allShoppingProducts))
+    localStorage.setItem('total', newTotal)
+
+    console.log(localStorage.getItem('shoppingCart'))
+    console.log(localStorage.getItem('total'))
+
+    alert("Producto agregado")
+    return
 }

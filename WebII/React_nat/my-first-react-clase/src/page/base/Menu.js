@@ -23,6 +23,13 @@ export default function Menu()
                 <li><Link to="/products">Products</Link></li>
                 <li><Link to="/product-details">Product Details</Link></li>
               </ul>
+
+              <div className='Carrito'>
+                <ul className='nav-list'>
+                  <li><Link to="/carrito">Carrito 🛒</Link></li>
+                </ul>
+              </div>
+
             </nav>          
 
              </header>
