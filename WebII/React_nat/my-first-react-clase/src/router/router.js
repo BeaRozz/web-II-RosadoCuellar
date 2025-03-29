@@ -7,6 +7,7 @@ import LogIn from "../page/LogIn";
 import Products from "../page/Products";
 import ProductDetails from "../page/ProductDetail";
 import Produc from "../page/Produc";
+import Carrito from "../page/Carrito";
 
 export default function MyRouters() {
     return(
@@ -18,6 +19,7 @@ export default function MyRouters() {
             <Route path="/products" element={<Products />}/>
             <Route path="/product-details" element={<ProductDetails/>}/>
             <Route path="/product/:id" element={<Produc />} />
+            <Route path="/carrito" element={<Carrito />} />
         </Routes>
     )
 }
