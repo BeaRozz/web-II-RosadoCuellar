@@ -1,18 +1,22 @@
 import "../styles/productsList.css";
+import { Navigate } from "react-router-dom";
 
-export default function ProductListItem(){
+export default function ProductListItem({title, id, description, images}){
+    const image = images?.[0] ?? ""
     return(
         <div>
-            <div className="product-list-item">
+            <div className="product-list-item" key={id}>
                 <div className="product-image">
-                    <img src="https://th.bing.com/th/id/OIP.SwhBT8qQW1J5uO-N-Q432wHaEe?rs=1&pid=ImgDetMain" alt="product" />
+                    <img src={image} alt="product" />
                 </div>
                 
                 <div className="product-detail">
-                    <h4>Product Name</h4>
+                    <h4>{description}</h4>
                     <p> 
-                        lorem ipsum dolor sit amet, consectetur adipiscing elit.    
+                        {title}   
                     </p>
+
+                    <a href={`/product/${id}`}>Ver producto</a>
                 </div>
             </div>
         </div>

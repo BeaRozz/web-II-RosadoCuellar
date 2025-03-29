@@ -1,0 +1,163 @@
+.product-det {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 35px;
+}
+
+.product-container-det {
+    width: 95%;
+    height: 87%;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-image-det {
+    width: 40%;
+    height: 80vh;
+    margin-right: 50px;
+    background-color: bisque;
+    border-radius: 20px;
+}
+
+.product-image-det img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.product-details-det {
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 100px;
+    justify-content:baseline;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.tags {
+    margin: 10px 0;
+}
+
+.tags span {
+    display: inline-block; 
+    background-color: #fde4e4; 
+    border-radius: 4px; 
+    padding: 5px 10px; 
+    margin-right: 5px; 
+    font-size: 12px; 
+}
+
+.product-price-det {
+    font-size: 30px; 
+    font-weight: bold;
+    color: #3a5875; 
+    margin: 10px 0;
+}
+
+.product-info-det {
+    margin: 15px 0; 
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.product-info-det div {
+    margin: 5px 0; 
+}
+
+.Agregar-al-carrito-det {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Agregar-al-carrito-det label{
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.cantidad-input {
+    width: 60px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.cantidad-input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.add-to-cart-btn {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #fde4e4 0, bisque 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #333;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+  
+.add-to-cart-btn:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #da9b9b 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+  
+.add-to-cart-btn:active {
+    box-shadow: rgb(244, 211, 171) 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.add-to-cart-btn:disabled {
+    background-image: radial-gradient(100% 100% at 100% 0, rgb(202, 202, 202) 0, rgb(204, 200, 200) 100%);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.add-to-cart-btn:disabled:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

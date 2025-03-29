@@ -1,0 +1,208 @@
+.page-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.product-details-page-container{
+  width: 95%;
+  height: 87%;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-image-container{
+  width: 180%;
+  height: auto;
+  margin-right: 50px;
+}
+
+.product-image-container img{
+  width: 100%;
+  height: 100%;
+}
+
+.product-details-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.toast-bar{
+  text-decoration: none;
+  font-size:x-small;
+  margin-bottom: 20px;
+}
+
+.toast-bar p{
+  margin: 0;
+  padding: 0;
+  font-size: x-small;
+}
+
+.product-info{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h4{
+  font-size:2rem;
+  padding: 0%;
+  margin: 0%;
+  width: 70%;
+}
+
+.product-info p{
+  font-size:medium;
+  text-align: justify;
+  width: 100%;
+}
+
+.product-highlights{
+  font-size:medium;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.product-highlights h5{
+  padding: 0px;
+  font-size:medium;
+  margin: 0px;
+}
+
+.product-specifications{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.product-specifications table{
+  border-collapse: collapse;
+  background-color: #F3F4F6;
+  column-gap: 10px;
+}
+
+.product-specifications th, td{
+  width: 100px;
+  padding: 2px;
+  padding-left: 20px;
+}
+
+.product-specifications th{
+  font-size: small;
+  text-align: left;
+  color: #AEB4BC;
+}
+
+.product-specifications td{
+  font-size: medium;
+  text-align: left;
+}
+
+.product-specifications h5{
+  background-color: #F3F4F6;
+  font-size: 1.8rem;
+  margin: 0px;
+  height: 100%;
+  width: 20%;
+}
+
+.product-buttons{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  width: 48%;
+  justify-content: space-between;
+}
+
+
+#add-to-cart-button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+#add-to-cart-button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#add-to-cart-button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+#add-to-wishlist-button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+#add-to-wishlist-button:hover{
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(-1px);
+}
+
+#add-to-wishlist-button:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
