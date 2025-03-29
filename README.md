@@ -41,4 +41,5 @@ En qué carpeta encontrar cada práctica, tarea o examen
 <ul>
  <li><b>Clases:</b> Rama con las actividades, prácticas y ejemplos hechos en clase. Se puede encontrar en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/main_React">"main_React"</a></li>
  <li><b>Tarea/Actividad 1:</b> Creación de los primeros componentes. Se puede encontrar en la rama <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/2.1_Actividad1-U2">"2.1_Actividad1-U2"</a></li>
+ <li><b>Tarea/Actividad 2:</b> Uso de UseEffect <a href="https://github.com/BeaRozz/web-II-RosadoCuellar/tree/2.2_TareaUseEffect-U2">"2.2_TareaUseEffect-U2"</a></li>
 </ul>
