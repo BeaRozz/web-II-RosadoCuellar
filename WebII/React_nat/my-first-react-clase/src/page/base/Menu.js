@@ -22,6 +22,7 @@ export default function Menu()
                 {/* <li><Link to="/login">Login</Link></li> */}
                 <li><Link to="/products">Products</Link></li>
                 <li><Link to="/product-details">Product Details</Link></li>
+                <li><Link to="/create-product">Create Product</Link></li>
               </ul>
 
               <div className='Carrito'>

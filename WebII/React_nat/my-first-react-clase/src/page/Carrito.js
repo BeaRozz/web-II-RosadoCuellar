@@ -44,7 +44,8 @@ export default function Carrito(){
             </div>
 
             <div className="total-content">
-                
+                <hr></hr>
+                <h1>Total: ${total}</h1>
             </div>
       </div>
     )
