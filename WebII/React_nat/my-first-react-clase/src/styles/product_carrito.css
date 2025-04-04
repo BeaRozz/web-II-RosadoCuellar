@@ -91,3 +91,8 @@
     margin-right: 5px;
     margin-left: 5px;
 }
+
+.total-content{
+    text-align: end;
+    margin: 20px;
+}

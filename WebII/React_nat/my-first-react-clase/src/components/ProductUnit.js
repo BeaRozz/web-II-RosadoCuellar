@@ -24,7 +24,7 @@ export default function ProductUnit({product}){
                 cant: add,
                 unitPrice: price,
                 stock: stock,
-                finalPrice:add*price
+                finalPrice: add*price
             }
             AddToShoppingCart(dataProduct)
             setClicked(false);
@@ -116,9 +116,27 @@ function AddToShoppingCart(product){
     //verificamos que no sea un producto repetido, en caso que sí, lo agregamos
     const indexRepited = allShoppingProducts.findIndex((item) => item.id === id);
     const repited = indexRepited !== -1
+    
     if(repited){
-        allShoppingProducts[indexRepited].finalPrice += finalPrice
-        allShoppingProducts[indexRepited].cant += cant
+        
+        //verificamos que no sea agregue más que el stock en e inventario
+        const oldCant = parseInt(allShoppingProducts[indexRepited].cant)
+        const newCant = oldCant + parseInt(cant)
+
+        console.log(oldCant, newCant)
+
+        if(newCant > stock){
+            alert("No hay suficiente stock")
+            return
+        }
+
+        allShoppingProducts[indexRepited].cant = `${newCant}`
+
+        //Agregamos el nuevo precio
+        const oldPrice = parseFloat(allShoppingProducts[indexRepited].finalPrice)
+        const newPrice = oldPrice + parseFloat(finalPrice)
+        console.log(newPrice)
+        allShoppingProducts[indexRepited].finalPrice = `${newPrice.toFixed(2)}`
     }
 
     //si el producto no está repedido lo agregamos al arrglo
